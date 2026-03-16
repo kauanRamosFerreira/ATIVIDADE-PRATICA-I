@@ -1,0 +1,29 @@
+<?php
+
+function calcular_media($nota){
+    $media = ($nota[0] + $nota[1] + $nota[2]) / 3;
+
+    echo "Média: ".$media."\n";
+
+    if ($media >= 7) {
+        echo "Aluno aprovado :)";
+    } elseif ($media >= 5 && $media < 7) {
+        echo "Aluno em recuperação";
+    } else {
+        echo "Aluno reprovado";
+    }
+}
+
+$nome = readline("Digite o nome do aluno: ");
+
+$nota = [];
+
+for ($i = 0; $i < 3; $i++) {
+    $nota[$i] = readline("Digite a ".($i+1)." nota: ");
+}
+
+echo "Aluno: ".$nome."\n";
+
+calcular_media($nota);
+
+?>
